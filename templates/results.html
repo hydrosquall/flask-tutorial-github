@@ -5,6 +5,13 @@
     <title>Results</title>
 </head>
 <body>
-    
+    <ul>
+        {% for repo in api_data["items"] %}
+            <li>
+                <h3>{{ repo.name }} by {{ repo.owner.login }}</h3>
+                <p>{{ repo.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

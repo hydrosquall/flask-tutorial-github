@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, render_template, request
 # Flask is the main framework
 # Jsonify lets you parse JSON objects into valid HTML
 # render_template used to render HTML
@@ -29,7 +29,7 @@ def search():
     if request.method == "POST":
         url = "https://api.github.com/search/repositories?q=" + request.form["user_search"]
         response_dict = requests.get(url).json()
-        return jsonify(response_dict)
+        return render_template("results.html",api_data=response_dict)
     else:
         return render_template("search.html")
 
