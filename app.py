@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify, render_template
 
 # Create an Flask app object.  We'll use this to create the routes.
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app.config['DEBUG'] = True # Enable this only while testing!
 
 @app.route("/")
 def hello():
-    return "What's up, world!"
+    return render_template("hello.html")
 
 @app.route("/name")
 def name():
