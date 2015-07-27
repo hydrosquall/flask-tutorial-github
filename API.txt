@@ -33,4 +33,5 @@ Status codes in the 500s mean that something is wrong with the server; code 500 
 CURL FOR MESSAGE
 curl https://api.github.com/search/repositories?q=Space%20Invaders%20HTML5+language:JavaScript > response.json
 
-Do from windows command line
+Do from windows command line- this is for html splitting
+curl -o gettext.html http://www.gnu.org/software/gettext/manual/gettext.html 2> details.txt
