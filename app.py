@@ -29,8 +29,8 @@ def search():
     if request.method == "POST":
         url = "https://api.github.com/search/repositories?q=" + request.form["user_search"]
         response_dict = requests.get(url).json()
-        return render_template("results.html",api_data=response_dict)
-    else:
+        return render_template("results.html", api_data=response_dict)
+    else: # REQUEST METHOD == "GET"
         return render_template("search.html")
 
 @app.route("/add/<x>/<y>")

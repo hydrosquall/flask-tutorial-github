@@ -7,9 +7,12 @@
 <body>
     <h1>Search</h1>
     <!-- emmet: form:post -->
-    <form action="/search" method="post">
-        <input type="text" name="user_search" placeholder="Type what you're looking for" required>
+    <!-- This is the parent template because it is more simple. Results is the child template -->
+    <form action="/search" method="POST">
+        <input type="text" name="user_search"  id="user_search" placeholder="Type what you're looking for" required>
         <button type="submit">Search</button>
     </form>
+    <!-- Ignore block if results are empty -->
+    {% block results %}{% endblock %}
 </body>
 </html>
