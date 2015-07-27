@@ -3,10 +3,14 @@
 {% if api_data["items"] %}    
     <ul>
         {% for repo in api_data["items"] %}
-            <li>
-                <h3>{{ repo.name }} by {{ repo.owner.login }}</h3>
-                <p>{{ repo.description }}</p>
-            </li>
+            {% if repo.name %} 
+                <li>
+                    <h3>{{ repo.name }}
+                        {% if repo.owner.login %} by {{ repo.owner.login }} {% endif %}
+                    </h3>
+                    {% if repo.description %}<p>{{ repo.description }}</p>{% endif %}
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% else %}
