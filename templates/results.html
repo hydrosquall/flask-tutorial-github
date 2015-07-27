@@ -16,4 +16,25 @@
 {% else %}
     <p>There are no results found on github- your idea is original!</p>
 {% endif %}
+
+{% if api_data %}    
+    <ul class="no-bullet">
+        {% for item in api_data %}
+            {% if item.inci_no %} 
+                <li>
+                    <h3>{{ item.inci_no }}
+                        {% if item.alm_date %} <small>by {{ item.alm_date }}</small> {% endif %}
+                    </h3>
+                    {% if item.alm_time %}<p>{{ item.alm_time }}</p>{% endif %}
+                    {% if item.descript %}<p>{{ item.descript }}</p>{% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No listings!</p>
+{% endif %}
+
+
+
 {% endblock %}

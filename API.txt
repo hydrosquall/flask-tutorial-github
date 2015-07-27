@@ -1,4 +1,9 @@
 https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
+https://data.hartford.gov/resource/824e-9vse.json?alm_date=2015-07-11T00:00:00.000
+
+console: https://apigee.com/onenote/embed/console/onenote/?
+
+curl https://data.hartford.gov/resource/824e-9vse.json?alm_date=2015-07-11T00:00:00.000 > fires.json
 
 API Basics
 + protocol: https

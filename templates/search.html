@@ -20,6 +20,17 @@
                         </div>
                     </div>
                 </form>
+
+                <form action="/hartford" method="POST">
+                   <div class="row collapse"> <!-- Collapse removes gutter. can query breaks too-->
+                        <div class="small-10 columns">
+                            <input type="text" name="user_search" placeholder="Search for fire data">
+                        </div>
+                        <div class="small-2 columns">
+                            <button class="postfix" type="submit">Search</button> <!-- postfix attach to search -->
+                        </div>
+                    </div>
+                </form>
                 <!-- Ignore block if results are empty -->
                 {% block results %}{% endblock %}</div>
         </div>
