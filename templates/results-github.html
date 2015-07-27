@@ -1,0 +1,21 @@
+{% extends "search.html" %}
+{% block results %}
+
+{% if api_data["items"] %}    
+    <ul class="no-bullet">
+        {% for repo in api_data["items"] %}
+            {% if repo.name %} 
+                <li>
+                    <h3>{{ repo.name }}
+                        {% if repo.owner.login %} <small>by {{ repo.owner.login }}</small> {% endif %}
+                    </h3>
+                    {% if repo.description %}<p>{{ repo.description }}</p>{% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no results found on github- your idea is original!</p>
+{% endif %}
+
+{% endblock %}
