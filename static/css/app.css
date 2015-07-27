@@ -4,6 +4,7 @@ body, html {
 }
 
 body {
+    padding-top: 20px;
     background-color: #000;
     background-image: url(http://i0.wp.com/devleader.ca/wp-content/uploads/2014/01/php_code.jpg);
     background-repeat: no-repeat;
