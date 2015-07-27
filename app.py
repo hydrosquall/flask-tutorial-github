@@ -1,4 +1,10 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
+# Flask is the main framework
+# Jsonify lets you parse JSON objects into valid HTML
+# render_template used to render HTML
+# request used to detect request types and change request type
+
+import requests #pip make requests
 
 # Create an Flask app object.  We'll use this to create the routes.
 app = Flask(__name__)
@@ -18,9 +24,14 @@ def name():
 def website():
     return "http://cameronyick.us"
 
-@app.route("/search/<search_query>")
-def search(search_query):
-  return search_query
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        url = "https://api.github.com/search/repositories?q=" + request.form["user_search"]
+        response_dict = requests.get(url).json()
+        return jsonify(response_dict)
+    else:
+        return render_template("search.html")
 
 @app.route("/add/<x>/<y>")
 def add(x,y):
